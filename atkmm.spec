@@ -26,6 +26,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source:		http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 BuildRequires:	glibmm2.4-devel >= %{glibmm_version}
 BuildRequires:	atk-devel >= %atk_version
+BuildRequires:	mm-common
 
 %description
 Atkmm provides a C++ interface to the Atk accessibility library.
