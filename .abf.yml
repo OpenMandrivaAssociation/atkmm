@@ -1,4 +1,5 @@
 removed_sources:
   atkmm-2.22.6.tar.bz2: 9ca44756821f4d431c554e1cf8184989bb25ce12
-sources:
   atkmm-2.22.7.tar.xz: c3273aa7b84fb163b0ad5bd3ee26b9d1cd4976bb
+sources:
+  atkmm-2.24.1.tar.xz: c4ad68142757cd9dcca1ddc8719f791914569fb8

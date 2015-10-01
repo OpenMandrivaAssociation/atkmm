@@ -4,11 +4,12 @@
 %define major	1
 %define libname	%mklibname %{name} %{api} %{major}
 %define devname	%mklibname -d %{name} %{api}
+%define _disable_rebuild_configure 1
 
 Summary:	C++ interface for accessibility library Atk
 Name:		atkmm
-Version:	2.22.7
-Release:	10
+Version:	2.24.1
+Release:	1
 #gw lib is LGPL, tool is GPL
 License:	LGPLv2+ and GPLv2+
 Group:		System/Libraries
