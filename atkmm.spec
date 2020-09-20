@@ -9,7 +9,7 @@
 Summary:	C++ interface for accessibility library Atk
 Name:		atkmm
 Version:	2.28.0
-Release:	1
+Release:	2
 #gw lib is LGPL, tool is GPL
 License:	LGPLv2+ and GPLv2+
 Group:		System/Libraries
@@ -56,16 +56,16 @@ when trying to develop or compile applications which need %{name}.
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--enable-shared \
 	--disable-static
 
-%make
+%make_build
 
 # make check does nothing
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/libatkmm-%{api}.so.%{major}*
