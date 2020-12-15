@@ -72,6 +72,6 @@ when trying to develop or compile applications which need %{name}.
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
 %{_libdir}/atkmm-%{api}/
-%doc %{_datadir}/doc/atkmm-%{api}/
-%doc %{_datadir}/devhelp/books/*
+#doc #{_datadir}/doc/atkmm-%{api}/
+#doc #{_datadir}/devhelp/books/*
 
