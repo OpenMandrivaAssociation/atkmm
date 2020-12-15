@@ -8,14 +8,15 @@
 
 Summary:	C++ interface for accessibility library Atk
 Name:		atkmm
-Version:	2.28.0
-Release:	2
+Version:	2.28.1
+Release:	1
 #gw lib is LGPL, tool is GPL
 License:	LGPLv2+ and GPLv2+
 Group:		System/Libraries
 Url:		http://gtkmm.sourceforge.net/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/atkmm/%{url_ver}/%{name}-%{version}.tar.xz
 
+BuildRequires:	meson
 BuildRequires:	mm-common
 BuildRequires:	pkgconfig(atk)
 BuildRequires:	pkgconfig(glibmm-2.4)
@@ -56,16 +57,11 @@ when trying to develop or compile applications which need %{name}.
 %setup -q
 
 %build
-%configure \
-	--enable-shared \
-	--disable-static
-
-%make_build
-
-# make check does nothing
+%meson
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %files -n %{libname}
 %{_libdir}/libatkmm-%{api}.so.%{major}*
@@ -76,6 +72,6 @@ when trying to develop or compile applications which need %{name}.
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
 %{_libdir}/atkmm-%{api}/
-%doc %{_datadir}/doc/atkmm-%{api}/
-%doc %{_datadir}/devhelp/books/*
+#doc #{_datadir}/doc/atkmm-%{api}/
+#doc #{_datadir}/devhelp/books/*
 
