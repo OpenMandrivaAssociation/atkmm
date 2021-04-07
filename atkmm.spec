@@ -1,6 +1,6 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 
-%define api	1.6
+%define api	2.36
 %define major	1
 %define libname	%mklibname %{name} %{api} %{major}
 %define devname	%mklibname -d %{name} %{api}
@@ -8,7 +8,7 @@
 
 Summary:	C++ interface for accessibility library Atk
 Name:		atkmm
-Version:	2.28.1
+Version:	2.36.0
 Release:	1
 #gw lib is LGPL, tool is GPL
 License:	LGPLv2+ and GPLv2+
@@ -19,7 +19,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/atkmm/%{url_ver}/%{name}-%{versi
 BuildRequires:	meson
 BuildRequires:	mm-common
 BuildRequires:	pkgconfig(atk)
-BuildRequires:	pkgconfig(glibmm-2.4)
+BuildRequires:	pkgconfig(glibmm-2.68)
 
 %description
 Atkmm provides a C++ interface to the Atk accessibility library.
@@ -57,7 +57,8 @@ when trying to develop or compile applications which need %{name}.
 %setup -q
 
 %build
-%meson
+%meson  \
+          -Dbuild-deprecated-api=true
 %meson_build
 
 %install
