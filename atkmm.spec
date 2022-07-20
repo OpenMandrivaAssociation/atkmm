@@ -68,7 +68,7 @@ when trying to develop or compile applications which need %{name}.
 %{_libdir}/libatkmm-%{api}.so.%{major}*
 
 %files -n %{devname}
-%doc ChangeLog AUTHORS COPYING NEWS README
+%doc ChangeLog AUTHORS COPYING NEWS README*
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
